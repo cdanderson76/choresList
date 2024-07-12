@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+/*
+
+COLOR PALETTE
+
+WHITE: #FEFEFE
+BLACK: #000000
+TEXT INPUT BACKGROUND: #EEEEEE
+ADD BUTTON: #FFCC68
+DELETE BUTTON: #FF9548
+CHORE: #FBDF7C
+
+*/
+
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ 
+ img {
+     max-width: 100%;
+     height: auto;
+ }
+
+ #canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Concert One', sans-serif;
+    background-image: linear-gradient(to right top, #ffcc68, #ffb785, 
+    #ffaba4, #e5a8b8, #c2a8bb, #bfa5ba, #bca2b8, #b99fb7, 
+    #d797b3, #f38e9c, #ff8c77, #ff9548);
+ }
+
+ #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+    height: 720px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50px;
+ }
+
+ .title {
+    width: 312px;
+    height: 72px;
+    font-size: 35px;
+    font-weight: 400;
+    margin-top: 76px;
+ }
+
+ #input-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 638px;
+    height: 97px;
+    /* border: 1px solid black; */
+    margin-top: 51px;
+ }
+
+ .chore-box {
+    width: 441px;
+    height: 94px;
+    text-align: center;
+    font-size: 30px;
+    background: #E5E7EB;
+    margin-right: 15px;
+    border-radius: 10px;
+    border: none;
+ }
+
+ .chore-box::placeholder {
+    color: #A4A4A4;
+ }
+
+ .button {
+    margin: 0 auto;
+    width: 87px;
+    height: 94px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 2px;
+ }
+
+ .btn-yellow {
+    background-color: #FFCC68;
+    margin-right: 8px;
+ }
+
+ .btn-orange {
+    background-color: #FF9548;
+ }
+
+ #task-container {
+    width: 638px;
+    height: 380px;
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    /* border: 2px solid black; */
+ }
+
+ .task {
+    width: 638px;
+    height: 92px;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    background-color: #FFCC68;
+    padding-top: 28px;
+    margin-top: 13px;
+ }
