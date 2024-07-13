@@ -1,35 +1,31 @@
 <!doctype html>
 <html>
     <head>
-        <title>Choreslist</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Choreslist project from Scrimba">
         <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="images/scrimba.ico">
+        <title>ChoresList</title>
     </head>
     <body id="canvas">
-        <main>
-            <div id="container">
-                <section>
-                    <div class="title">
-                        <h1>Choreslist</h1>
-                    </div>
-                </section>
-                
-                <section>
-                    <div id="input-area">
-                        <input type="text" class="chore-box" placeholder="Do dishes">
-                        <button class="button btn-yellow">></button>
-                        <button class="button btn-orange">✕</button>
-                    </div>
+        <main id="container">
 
-                    <div id="task-container">
-                        <div class="task">Do Dishes</div>
-                    </div>   
-                </section>
-                
-            </div>
+            <section class="title">
+                <h1>Choreslist</h1>
+                <div class="error"></div>
+            </section>
+    
+            <section id="input-area">
+                <input type="text" class="chore-box" placeholder="Do dishes">
+                <button id='btn-orange' class="button btn-send">></button>
+                <button id='btn-yellow' class="button btn-delete">✕</button>
+            </section>
+
+            <ul id="task-container"></ul>   
+
         </main>
-        <script src="index.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

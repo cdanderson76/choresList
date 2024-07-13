@@ -14,107 +14,155 @@ CHORE: #FBDF7C
 */
 
 *  {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- }
- 
- img {
-     max-width: 100%;
-     height: auto;
- }
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
 
- #canvas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    font-family: 'Concert One', sans-serif;
-    background-image: linear-gradient(to right top, #ffcc68, #ffb785, 
-    #ffaba4, #e5a8b8, #c2a8bb, #bfa5ba, #bca2b8, #b99fb7, 
-    #d797b3, #f38e9c, #ff8c77, #ff9548);
- }
+img {
+   max-width: 100%;
+   height: auto;
+}
 
- #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 900px;
-    height: 720px;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 50px;
- }
+#canvas {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   height: 100vh;
+   font-family: 'Concert One', sans-serif;
+   margin-top: 30px;
+   background-image: linear-gradient(to right top, #ffcc68, #ffc260, #ffb859,
+   #ffae52, #ffa34d, #ff9e68, #ff9c80, #ff9d96, #fdb0c1, #f2c6de,
+   #eadced, #eeeeee);
+   overflow: hidden;
+}
 
- .title {
-    width: 312px;
-    height: 72px;
-    font-size: 35px;
-    font-weight: 400;
-    margin-top: 76px;
- }
+#container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 600px;
+   height: 820px;
+   background-color: whitesmoke;
+   border: 2px solid black;
+   border-radius: 25px;
+   padding: 0 40px;
+}
 
- #input-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 638px;
-    height: 97px;
-    /* border: 1px solid black; */
-    margin-top: 51px;
- }
+.title {
+   width: 312px;
+   height: 72px;
+   font-size: 35px;
+   font-weight: 400;
+   margin-top: 35px;
+   text-align: center;
+}
 
- .chore-box {
-    width: 441px;
-    height: 94px;
-    text-align: center;
-    font-size: 30px;
-    background: #E5E7EB;
-    margin-right: 15px;
-    border-radius: 10px;
-    border: none;
- }
+#input-area {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 500px;
+   height: 97px;
+   margin-top: 35px;
+}
 
- .chore-box::placeholder {
-    color: #A4A4A4;
- }
+.chore-box {
+   width: 350px;
+   height: 64px;
+   text-align: center;
+   font-size: 25px;
+   background: #E5E7EB;
+   margin-right: 10px;
+   border-radius: 10px;
+   border: none;
+   padding: 0 3px;
+   transition: 1s;
+}
 
- .button {
-    margin: 0 auto;
-    width: 87px;
-    height: 94px;
-    font-size: 30px;
-    border-radius: 10px;
-    border: none;
-    margin-top: 2px;
- }
+.chore-box::placeholder {
+   color: #A4A4A4;
+   font-size: 25px;
+}
 
- .btn-yellow {
-    background-color: #FFCC68;
-    margin-right: 8px;
- }
+.button {
+   margin: 0 auto;
+   width: 67px;
+   height: 64px;
+   font-size: 30px;
+   border-radius: 10px;
+   border: none;
+   margin-top: 2px;
+}
 
- .btn-orange {
-    background-color: #FF9548;
- }
+.btn-send {
+   background-color: #FFCC68;
+   margin-right: 8px;
+   transition: 1s;
+}
 
- #task-container {
-    width: 638px;
-    height: 380px;
-    font-family: 'Inter', sans-serif;
-    font-size: 30px;
-    /* border: 2px solid black; */
- }
+.btn-delete {
+   background-color: #FF9548;
+   transition: 1s;
+}
 
- .task {
-    width: 638px;
-    height: 92px;
-    /* border: 2px solid black; */
-    border-radius: 10px;
-    border: none;
-    text-align: center;
-    background-color: #FFCC68;
-    padding-top: 28px;
-    margin-top: 13px;
- }
+.button:hover {
+   cursor: pointer;
+}
+
+.btn-send:hover {
+   background-color: #fcdc9c;
+   transition: 1s;
+}
+
+.btn-delete:hover {
+   background-color: #ffbf92;
+   transition: 1s;
+}
+
+input:focus {
+   outline: none;
+}
+
+input:hover,
+input:active {
+   background-color: #cecece;
+   transition: 1s;
+}
+
+#task-container {
+   width: 495px;
+   height: 380px;
+   font-family: 'Inter', sans-serif;
+   font-size: 30px;
+}
+
+.task {
+   width: 495px;
+   height: 65px;
+   font-size: 21px;
+   text-align: center;
+   border-radius: 10px;
+   border: none;
+   outline: none;
+   list-style: none;
+   background-color: #FFCC68;
+   padding-top: 19px;
+   margin-top: 13px;
+   margin-right: 5px;
+}
+
+div > .error {
+font-size: 20px;
+color: red;
+font-style: italic;
+margin-top: 5px;
+padding-top: 10px;
+animation: message 5s ease-in-out ;
+animation-fill-mode: both;
+}
+
+@keyframes message {
+   from { opacity: 10; }
+   to { opacity: 0 }
+}
