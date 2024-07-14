@@ -5,13 +5,13 @@ const resetBtn = document.getElementById('reset');
 const inputArea = document.querySelector('.chore-box')
 const error = document.querySelector('.error')
 const taskArea = document.getElementById('task-container');
-const createdTasks = document.querySelectorAll('.created-task');
+const createdTask = document.getElementById('task');
 
 let tasksArray = [];
 let items = '';
 deleteBtn.disabled = true;
 
-addBtn.addEventListener('click', () => { addTask(createdTasks);});
+addBtn.addEventListener('click', () => { addTask(createdTask);});
 deleteBtn.addEventListener('dblclick', () => { removeAllTasks();});
 resetBtn.addEventListener('click', () => { reloadList();});
 
@@ -76,11 +76,13 @@ function renderTasks() {
 
     for( let i = 0; i < tasksArray.length; i++ ) {
         taskItems += `
-            <li id='task' class="task created-task">${tasksArray[i]}</li>
+            <li id='task' class="task created-task" data-task='task-container'>${tasksArray[i]}</li>
             `
     }
     taskArea.innerHTML = taskItems;
 }
+
+// Conditionally disable/enable buttons
 
 function enableButtons() {
     if( tasksArray.length === 0 ) {
@@ -89,6 +91,7 @@ function enableButtons() {
         deleteBtn.disabled = false;
     }
 }
+
 
 // Start new list
 

@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
-/*
-
-COLOR PALETTE
-
-WHITE: #FEFEFE
-BLACK: #000000
-TEXT INPUT BACKGROUND: #EEEEEE
-ADD BUTTON: #FFCC68
-DELETE BUTTON: #FF9548
-CHORE: #FBDF7C
-
-*/
-
 *  {
    margin: 0;
    padding: 0;
@@ -95,15 +82,22 @@ img {
    margin-top: 2px;
 }
 
+/* Common transition durations */
+
+.btn-send,
+.btn-send:hover,
+.btn-delete:hover,
+#reset:hover {
+   transition: 1s;
+}
+
 .btn-send {
    background-color: #FFCC68;
    margin-right: 8px;
-   transition: 1s;
 }
 
 .btn-delete {
    background-color: #FF9548;
-   transition: 1s;
 }
 
 .button:hover {
@@ -112,18 +106,15 @@ img {
 
 .btn-send:hover {
    background-color: #fcdc9c;
-   transition: 1s;
 }
 
 .btn-delete:hover {
    background-color: #ffbf92;
-   transition: 1s;
 }
 
 #reset:hover {
    cursor: pointer;
    background-color: #f8cfb1;
-   transition: 1s ease;
 }
 
 input:focus {
@@ -184,7 +175,7 @@ animation-fill-mode: both;
    margin-top: 50px;
    background-color: #FF9548;
    border-radius: 10px;
-   transition: 1s ease;
+   transition: 1s;
 }
 
 .hide {
