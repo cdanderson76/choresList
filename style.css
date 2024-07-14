@@ -120,6 +120,12 @@ img {
    transition: 1s;
 }
 
+#reset:hover {
+   cursor: pointer;
+   background-color: #f8cfb1;
+   transition: 1s ease;
+}
+
 input:focus {
    outline: none;
 }
@@ -158,8 +164,31 @@ color: red;
 font-style: italic;
 margin-top: 5px;
 padding-top: 10px;
-animation: message 5s ease-in-out ;
+animation: message 4s ease-in-out ;
 animation-fill-mode: both;
+}
+
+.congratulations {
+   font-size: 25px;
+   font-family: 'Cambria', sans-serif;
+   font-style: italic;
+   margin-top: 20px;
+}
+
+#reset {
+   width: 495px;
+   height: 80px;
+   font-family: 'Inter', sans-serif;
+   font-size: 30px;
+   font-weight: 800;
+   margin-top: 50px;
+   background-color: #FF9548;
+   border-radius: 10px;
+   transition: 1s ease;
+}
+
+.hide {
+   visibility: hidden;
 }
 
 @keyframes message {
