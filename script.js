@@ -33,6 +33,8 @@ retrieveStoredItems();
 
 function addTask() {
 
+    inputArea.value = inputArea.value.toLowerCase();
+
     if( !tasksArray.includes(inputArea.value) && inputArea.value ) {
             tasksArray.push(inputArea.value);
             renderTasks();
