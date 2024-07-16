@@ -62,27 +62,24 @@ function removeAllTasks() {
                          `
     deleteBtn.disabled = true;
     
-    container.style.height = '80%';
+    container.style.height = 'min-content';
 
     document.getElementById('no-btn').addEventListener('click', function() {
         document.getElementById('modal').classList.add('hide');
         document.getElementById('no-btn').classList.add('hide');
         document.getElementById('yes-btn').classList.add('hide');
+        deleteBtn.disabled = false;
+        container.style.height = 'min-content';
         renderTasks();
     })
     
     document.getElementById('yes-btn').addEventListener('click', function() {
         tasksArray = [];
         renderTasks();
+        container.style.height = 'min-content';
         inputArea.value = ''
         localStorage.clear();
-        taskArea.innerHTML = `<img src="images/giphy.webp" alt='Will Ferrel celebrating'/>
-                            <h2 class='congratulations'>Great Job!  You've finished all of your chores!!</h2>
-                            `
-    resetBtn.classList.remove('hide');
-    deleteBtn.disabled = true;
-    addBtn.disabled = true;
-    container.style.height = '670px';
+        
     })
 };   
 
@@ -92,16 +89,19 @@ function removeIndividualTask(index) {
 
     tasksArray.splice(index, 1);
 
-    if( tasksArray.length === 0 ) {
-        taskArea.innerHTML = `<img src="images/giphy.webp" alt='Will Ferrel celebrating'/>
-                            <h2 class='congratulations'>Great Job!  You've finished all of your chores!!</h2>`;
+    // renderTasks();
 
+    if( tasksArray.length === 0 ) {
         
         resetBtn.classList.remove('hide');
         localStorage.clear();
         deleteBtn.disabled = true;
         addBtn.disabled = true;
-        container.style.height = '670px';
+        container.style.height = 'min-height';
+        taskArea.innerHTML = `<img src="images/giphy.webp" alt='Will Ferrel celebrating'/>
+                            <h2 class='congratulations'>Great Job!  You've finished all of your chores!!</h2>`;
+    } else {
+        renderTasks();
     }
 }
 
