@@ -11,9 +11,11 @@ img {
    height: auto;
 }
 
-#canvas {
+.canvas {
    display: flex;
-   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
    width: 100%;
    height: 100vh;
    font-family: 'Concert One', sans-serif;
@@ -24,13 +26,11 @@ img {
    overflow: hidden;
 }
 
-#container {
+.container {
    display: flex;
    flex-direction: column;
    align-items: center;
-   position: relative;
    width: 600px;
-   height: 820px;
    background-color: whitesmoke;
    border: 2px solid black;
    border-radius: 25px;
@@ -40,19 +40,21 @@ img {
 .title {
    width: 312px;
    height: 72px;
+   margin: 0 auto;
    font-size: 35px;
    font-weight: 400;
+   margin-top: 35px;
    margin-top: 35px;
    text-align: center;
 }
 
-#input-area {
+.input-area {
    display: flex;
    align-items: center;
    justify-content: center;
    width: 500px;
    height: 97px;
-   margin-top: 35px;
+   margin-top: 60px;
 }
 
 .chore-box {
@@ -83,15 +85,6 @@ img {
    margin-top: 2px;
 }
 
-/* Common transition durations */
-
-.btn-send,
-.btn-send:hover,
-.btn-delete:hover,
-#reset:hover {
-   transition: 1s;
-}
-
 .btn-send {
    background-color: #FFCC68;
    margin-right: 8px;
@@ -101,39 +94,16 @@ img {
    background-color: #FF9548;
 }
 
-.button:hover {
-   cursor: pointer;
-}
 
-.btn-send:hover {
-   background-color: #fcdc9c;
-}
-
-.btn-delete:hover {
-   background-color: #ffbf92;
-}
-
-#reset:hover {
-   cursor: pointer;
-   background-color: #f8cfb1;
-}
-
-input:focus {
-   outline: none;
-}
-
-input:hover,
-input:active {
-   background-color: #cecece;
-   transition: 1s;
-}
-
-#task-container {
-   width: 495px;
-   height: 380px;
+.task-container {
+   width: 500px;
+   height: 50%;
    font-family: 'Inter', sans-serif;
    font-size: 30px;
+   margin-bottom: -25%;
 }
+
+/* Dynamic content */
 
 .task {
    width: 495px;
@@ -167,31 +137,35 @@ div > .error {
    margin-top: 20px;
 }
 
-#reset {
-   width: 495px;
-   height: 80px;
+.reset {
+   width: 475px;
+   height: 60px;
    font-family: 'Inter', sans-serif;
    font-size: 30px;
    font-weight: 800;
-   margin-top: 50px;
+   margin-top: 40px;
+   margin: 140px 0px 40px 0px;
    background-color: #FF9548;
    border-radius: 10px;
-   transition: 1s;
 }
 
 .hide {
    visibility: hidden;
 }
 
+[disabled] {
+   cursor: not-allowed;
+}
+
 .modal {
    width: 660px;
-   height: 200px;
+   height: 470px;
    margin: auto;
    border: 2px solid black;
-   position: fixed;
+   position: absolute;
    left: 2px;
    right: 1px;
-   top: 300px;
+   top: 200px;
    font-family: 'Cambria', sans-serif;
    text-align: center;
    font-size: 30px;
@@ -210,7 +184,49 @@ div > .error {
    font-weight: 600;
    border: none;
    border-radius: 12px;
-   margin-top: 50px;
+   margin-top: 30px;
+}
+
+.kermit {
+   margin-top: 15px;
+}
+
+/* Common transition durations */
+
+.btn-send,
+.btn-send:hover,
+.btn-delete,
+.btn-delete:hover {
+   transition: 1s;
+}
+
+/* Hover effects */
+
+.button:hover {
+   cursor: pointer;
+}
+
+.btn-send:hover {
+   background-color: #fcdc9c;
+}
+
+.btn-delete:hover {
+   background-color: #ffbf92;
+}
+
+#reset:hover {
+   cursor: pointer;
+   background-color: #f8cfb1;
+}
+
+input:focus {
+   outline: none;
+}
+
+input:hover,
+input:active {
+   background-color: #cecece;
+   transition: 1s;
 }
 
 /* Buttons for the modal pop up */

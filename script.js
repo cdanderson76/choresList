@@ -8,6 +8,7 @@ const error = document.querySelector('.error')
 const taskArea = document.getElementById('task-container');
 const createdTask = document.getElementById('task');
 const modal = document.getElementById('modal');
+const container = document.getElementById('container');
 
 let tasksArray = [];
 let items = '';
@@ -44,13 +45,6 @@ function addTask() {
         error.innerHTML = '';
     }
 
-    // Limit items to 7
-
-    if(tasksArray.length === 7 ) {
-        addBtn.disabled = true;
-        inputArea.disabled = true;
-    }
-
     localStorage.setItem('myTasks', JSON.stringify(tasksArray))
 }
 
@@ -61,14 +55,20 @@ function removeAllTasks() {
     // Modal pop up
 
     taskArea.innerHTML = `<div id='modal' class='modal'>Would you like to remove ALL
-                         chores?<button id='yes-btn' class='yes-btn btn-confirmation'>YES</button>
+                         chores?
+                         <img class='kermit'src="images/kermit.webp" alt='Kermit the Frog scared'/>
+                         <button id='yes-btn' class='yes-btn btn-confirmation'>YES</button>
                          <button id='no-btn' class='no-btn btn-confirmation'>NO</button></div>
                          `
+    deleteBtn.disabled = true;
+    
+    container.style.height = '80%';
 
     document.getElementById('no-btn').addEventListener('click', function() {
         document.getElementById('modal').classList.add('hide');
         document.getElementById('no-btn').classList.add('hide');
         document.getElementById('yes-btn').classList.add('hide');
+        renderTasks();
     })
     
     document.getElementById('yes-btn').addEventListener('click', function() {
@@ -76,10 +76,13 @@ function removeAllTasks() {
         renderTasks();
         inputArea.value = ''
         localStorage.clear();
-        taskArea.innerHTML = `<img src="images/giphy.webp" />
-                            <h2 class='congratulations'>Great Job!  You've finished all of your tasks!!</h2>
+        taskArea.innerHTML = `<img src="images/giphy.webp" alt='Will Ferrel celebrating'/>
+                            <h2 class='congratulations'>Great Job!  You've finished all of your chores!!</h2>
                             `
     resetBtn.classList.remove('hide');
+    deleteBtn.disabled = true;
+    addBtn.disabled = true;
+    container.style.height = '670px';
     })
 };   
 
@@ -87,14 +90,19 @@ function removeAllTasks() {
 
 function removeIndividualTask(index) {
 
-    tasksArray.splice(index, 1)
+    tasksArray.splice(index, 1);
 
     if( tasksArray.length === 0 ) {
-        deleteBtn.disable = true;
+        taskArea.innerHTML = `<img src="images/giphy.webp" alt='Will Ferrel celebrating'/>
+                            <h2 class='congratulations'>Great Job!  You've finished all of your chores!!</h2>`;
+
+        
+        resetBtn.classList.remove('hide');
         localStorage.clear();
+        deleteBtn.disabled = true;
+        addBtn.disabled = true;
+        container.style.height = '670px';
     }
-    console.log(deleteBtn.disable)
-    renderTasks()
 }
 
 
@@ -155,9 +163,10 @@ function enableButtons() {
 // Start new list
 
 function reloadList() {
-    location.reload();
+    resetBtn.classList.add('hide');
+    container.style.height = '';
+    renderTasks();
 }
-
 
 // Retrieve stored items from localStorage and conditionally render them
 
