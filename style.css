@@ -153,10 +153,6 @@ div > .error {
    visibility: hidden;
 }
 
-[disabled] {
-   cursor: not-allowed;
-}
-
 .modal {
    width: 660px;
    height: 470px;
@@ -200,8 +196,12 @@ div > .error {
 
 /* Hover effects */
 
-.button:hover {
+.button
+    & :hover {
    cursor: pointer;
+    }
+    :disabled {
+        cursor: not-allowed
 }
 
 .btn-send:hover {
